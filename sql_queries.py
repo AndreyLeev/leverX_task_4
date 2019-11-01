@@ -37,7 +37,6 @@ SELECT_QUERIES_SQL = [
     ,
     """
     SELECT rooms.id, rooms.name,
-    CAST(AVG(YEAR(NOW())-YEAR(students.birthday)) AS CHAR) as avg_age
     FROM rooms JOIN students ON rooms.id = students.room_id
     GROUP BY rooms.id, rooms.name
     ORDER BY avg_age
